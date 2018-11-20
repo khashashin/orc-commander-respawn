@@ -89,7 +89,8 @@ $(document).ready(function() {
                 if($(that).parent().prevAll(':eq(0)').has('p')) {
                     $(that).parent().prevAll(':eq(0)').children().remove();
                 }
-                $(that).parent().prevAll(':eq(0)').append("<p>" + "<b class='fight'>" + "⚔" + "</b>" + "</p>");
+                $(that).parent().prevAll(':eq(0)').css({"text-align": "center"});
+                $(that).parent().prevAll(':eq(0)').append("<a class='btn-floating pulse btn-small deep-orange fight'>" + "⚔" + "</a>");
             }
         }
         
