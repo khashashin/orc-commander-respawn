@@ -23,9 +23,23 @@ $(document).ready(function() {
         $("#hours").html(( hours < 10 ? "0" : "" ) + hours);
     },1000);
 
+    $('.clear-all').addClass('disabled');
+    $('.clear-all').click(function(e) {
+        e.preventDefault();
+        $('tbody tr').each(function() {
+            var timerId = $(this).children('td').eq(2).attr('data-timer-id');
+            clearInterval(timerId);
+            $(this).children('td').children('p').remove();
+        });
+        $('a.killed').each(function() {
+            $(this).removeClass('disabled');
+        })
+    });
+
     $('tbody a.clear').click(function(e) {
-        e.preventDefault()
+        e.preventDefault();
         // Removes time from the table if its available
+        clearInterval($(this).parent().attr('data-timer-id'));
         if($(this).parent().prevAll(':eq(0)').has('p')) {
             $(this).parent().prevAll(':eq(0)').children().remove();
         }
@@ -40,6 +54,8 @@ $(document).ready(function() {
 
     $('tbody a.killed').click(function(e){
         e.preventDefault()
+        var intervalId = setInterval(respawnTimeCountdown, 1000);
+        $(this).parent().attr('data-timer-id', intervalId);
         // Adds 30 min to current time
         var respawnTime = moment().add(30, 'minutes').format('HH:mm:ss');
         // Sets countdown for 30 min
@@ -76,10 +92,6 @@ $(document).ready(function() {
             }
         }
         
-        var intervalId = setInterval(respawnTimeCountdown(), 1000);
-        if(diffTime > 0) {
-            $(this).parent().prevAll(':eq(0)').children().attr('data-timer-id', intervalId);
-        }
         // Add class to button "Killed" to prevent multiple event calls
         if($(this).parent().prevAll(':eq(0)').children().has('p')) {
             $(this).addClass('disabled');
@@ -90,6 +102,7 @@ $(document).ready(function() {
         }
         // Prescribes re-spawn time in the table.
         $(this).parent().prevAll(':eq(1)').append("<p>"+respawnTime+"</p>");
+        $('.clear-all').removeClass('disabled');
     });
     $('.materialboxed').materialbox();
 });
