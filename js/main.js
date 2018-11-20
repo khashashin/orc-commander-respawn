@@ -34,6 +34,7 @@ $(document).ready(function() {
         $('a.killed').each(function() {
             $(this).removeClass('disabled');
         })
+        $('.clear-all').addClass('disabled');
     });
 
     $('tbody a.clear').click(function(e) {
