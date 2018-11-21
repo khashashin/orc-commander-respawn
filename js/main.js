@@ -106,5 +106,23 @@ $(document).ready(function() {
         $(this).parent().prevAll(':eq(1)').append("<p>"+respawnTime+"</p>");
         $('.clear-all').removeClass('disabled');
     });
+
     $('.materialboxed').materialbox();
+
+    $('tbody tr').each(function() {
+        var that = this;
+        $(this).children('td').eq(2).children('a').eq(0).hover(
+            function() {
+                $('.back-image img').removeAttr('src')
+                var fieldId = $(that).children('th').attr('id');
+                var imgLink = 'img/bckg_' + fieldId + '.bmp';
+                $('.back-image img').attr('src', imgLink);
+            },
+            function() {
+                $('.back-image img').removeAttr('src')
+                var imgLink = 'img/bckg2.bmp';
+                $('.back-image img').attr('src', imgLink);
+            }
+        );
+    });
 });
