@@ -29,7 +29,10 @@ $(document).ready(function() {
         $('tbody tr').each(function() {
             var timerId = $(this).children('td').eq(2).attr('data-timer-id');
             clearInterval(timerId);
-            $(this).children('td').children('p').remove();
+            if(($(this).children('td').has('p')) || ($(this).children('td').has('a.fight'))) {
+                $(this).children('td').children('p').remove();
+                $(this).children('td').children('a.fight').remove();
+            }
         });
         $('a.killed').each(function() {
             $(this).removeClass('disabled');
@@ -50,6 +53,20 @@ $(document).ready(function() {
         }
         if($(this).prev().hasClass('disabled')) {
             $(this).prev().removeClass('disabled');
+        }
+        // If all fields are empty disable Clear All button
+        var hasElement = false;
+        $('tbody tr').each(function() {
+            if($(this).children('td').eq(0).has('p').length !== 0) {
+                hasElement = true;
+                return false;
+            }
+            else {
+                hasElement = false;
+            }
+        });
+        if(hasElement == false) {
+            $('.clear-all').addClass('disabled');
         }
     });
 
@@ -84,6 +101,7 @@ $(document).ready(function() {
                 // show how many hours, minutes and seconds are left
                 $(that).parent().prevAll(':eq(0)').append("<p>" + h + ":" + m + ":" + s + "</p>");
             }
+            // After countdown is finished, show ⚔ icon
             else {
                 // Removes time from the table if its available
                 if($(that).parent().prevAll(':eq(0)').has('p')) {
