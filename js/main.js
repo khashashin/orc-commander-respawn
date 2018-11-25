@@ -1,4 +1,24 @@
 $(document).ready(function() {
+    $('#contact').hide();
+    $('#send_msg').click(function(e) {
+        e.preventDefault();
+        $('#tool').hide();
+        $('#contact').show();
+    });
+    $('button.close').click(function() {
+        $('#contact').hide();
+        $('#tool').show();
+    });
+    $('button.send').click(function() {
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        if(!$('#icon_face').val() || !$('form textarea').val() || !$('#icon_email').val().match(re)) {
+            return;
+        }
+        else {
+            $('#contact').hide();
+            $('#tool').show();
+        }
+    });
     // setting date and time
     $('#Date').html(moment().format('dddd, MMMM Do YYYY'));
     

@@ -29,7 +29,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" id="tool">
         <div class="row valign-wrapper card z-depth-4">
             <div class="col s6 m12">
                 <table class="responsive-table">
@@ -165,6 +165,10 @@
                 </table>
             </div>
             <div class="col s6 m12">
+                <div class="row github">
+                    <a href="https://github.com/khashashin/orc-commander-respawn" target="_blank" class="right waves-effect waves-light btn blue-grey"><i
+                            class="material-icons left fa fa-github"></i>GitHub</a>
+                </div>
                 <div class="clock">
                     <div id="Date"></div>
                     <ul>
@@ -178,12 +182,40 @@
                 <div class="back-image">
                     <img class="materialboxed responsive-img" width="650" src="img/bckg2.bmp">
                 </div>
-                <div>
-                    <a href="https://github.com/khashashin/orc-commander-respawn" target="_blank" class="right waves-effect waves-light btn blue-grey"><i
-                            class="material-icons left fa fa-github"></i>GitHub</a>
+                <div class="row send-btn">
+                    <a id="send_msg" class="btn-floating btn-large waves-effect waves-light red right"><i class="material-icons">rate_review</i></a>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="contact" id="contact">
+        <form action="https://formspree.io/received.feedback@gmail.com" class="col s12 contact-form z-depth-4" method="POST">
+            <div class="row">
+                <div class="input-field col s12">
+                <i class="material-icons prefix grey-text text-darken-2">face</i>
+                <input id="icon_face" type="text" class="validate" required="required" name="name">
+                <label for="icon_face">Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                <i class="material-icons prefix grey-text text-darken-2">email</i>
+                <input id="icon_email" type="email" class="validate" required="required" name="email">
+                <label for="icon_email" data-error="Write your email again please!" data-success="OK, you're good!">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                <i class="material-icons prefix grey-text text-darken-2">create</i>
+                <textarea id="icon_message" class="materialize-textarea" required="required" name="message"></textarea>
+                <label for="icon_message">Message</label>
+                </div>
+            </div>
+            <div class="row" style="text-align: center">
+                <button class="close btn waves-effect waves-light valign-wrapper red">Close</button>
+                <button class="send btn waves-effect waves-light valign-wrapper" type="submit" name="action">Send<i class="material-icons right">send</i></button>
+            </div>
+        </form>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Compiled and minified JavaScript -->

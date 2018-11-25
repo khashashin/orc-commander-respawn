@@ -49,3 +49,42 @@ img {
 .fight {
     font-size: 20px;
 }
+.github {
+    position: absolute;
+    right: 25px;
+    padding-top: 15px;
+    top: 0;
+}
+.contact {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: white;
+}
+.contact-form {
+    width: 520px;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #373737;
+    border-radius: 5px;
+}
+.send-btn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 0 13px 15px;
+    margin: 0!important;
+}
+.message {
+    width: 520px;
+    display: block;
+    padding: 25px;
+    border: 1px solid #373737;
+    border-radius: 5px;
+    margin: 200px auto;
+    text-align: center;
+}
