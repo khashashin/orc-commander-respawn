@@ -1,31 +1,54 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 
 <head>
+    <!-- CEO -->
+    <title>Lineage 2 - Ork Barraks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name=robots content="index,follow">
+    <meta name="googlebot" content="all" />
+    <meta name="description" content="This small browser tool is developed for lineage 2 game, it was created to save Orc Commander next re-spawn time. https://github.com/khashashin/orc-commander-respawn#lineage-2-orc-commander-respawn-timer" />
+    <meta name="author" content="khashashin" />
+    <meta name="keywords" content="lineage 2, l2, orc, exping, farming, classic, l2classin" />
+    <!-- Twitter Card data https://dev.twitter.com/cards/overview -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@khashashin">
+    <meta name="twitter:title" content="Lineage 2 - Ork Barraks">
+    <meta name="twitter:description" content="This small browser tool is developed for lineage 2 game, it was created to save Orc Commander next re-spawn time.">
+    <meta name="twitter:creator" content="@khashashin">
+    <meta name="twitter:image" content="./img/mqdefault.jpg">
+    <!-- Open Graph data http://ogp.me/ -->
+    <meta property="og:title" content="Lineage 2 - Ork Barraks" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://l2ob.netlify.com/" />
+    <meta property="og:image" content="./img/mqdefault.jpg" />
+    <meta property="og:description" content="This small browser tool is developed for lineage 2 game, it was created to save Orc Commander next re-spawn time.">
+    <meta property="og:site_name" content="l2ob" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <link rel="canonical" href="https://l2ob.netlify.com/" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101009675-2"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
 
-        gtag('config', 'UA-101009675-2');
+      gtag('config', 'UA-101009675-2');
     </script>
-
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Ork Barraks</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="./img/favicon.ico" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/main.css">
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/main.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
 </head>
 
 <body>
@@ -38,7 +61,9 @@
                             <th>Spot</th>
                             <th>Respawn Time</th>
                             <th>Countdown</th>
-                            <th><a class="clear-all right waves-effect waves-light btn-small red">Clear all</a></th>
+                            <th>
+                                <a class="clear-all right waves-effect waves-light btn-small red">Clear all</a>
+                            </th>
                             <th></th>
                         </tr>
                     </thead>
@@ -180,7 +205,7 @@
                     </ul>
                 </div>
                 <div class="back-image">
-                    <img class="materialboxed responsive-img" width="650" src="img/bckg2.bmp">
+                    <img class="materialboxed responsive-img" width="650" src="img/bckg2.bmp" />
                 </div>
                 <div class="row send-btn">
                     <a id="send_msg" class="btn-floating btn-large waves-effect waves-light red right"><i class="material-icons">rate_review</i></a>
@@ -192,28 +217,32 @@
         <form action="https://formspree.io/received.feedback@gmail.com" class="col s12 contact-form z-depth-4" method="POST">
             <div class="row">
                 <div class="input-field col s12">
-                <i class="material-icons prefix grey-text text-darken-2">face</i>
-                <input id="icon_face" type="text" class="validate" required="required" name="name">
-                <label for="icon_face">Name</label>
+                    <i class="material-icons prefix grey-text text-darken-2">face</i>
+                    <input id="icon_face" type="text" class="validate" required="required" name="name" />
+                    <label for="icon_face">Name</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                <i class="material-icons prefix grey-text text-darken-2">email</i>
-                <input id="icon_email" type="email" class="validate" required="required" name="email">
-                <label for="icon_email" data-error="Write your email again please!" data-success="OK, you're good!">Email</label>
+                    <i class="material-icons prefix grey-text text-darken-2">email</i>
+                    <input id="icon_email" type="email" class="validate" required="required" name="email" />
+                    <label for="icon_email" data-error="Write your email again please!" data-success="OK, you're good!">Email</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                <i class="material-icons prefix grey-text text-darken-2">create</i>
-                <textarea id="icon_message" class="materialize-textarea" required="required" name="message"></textarea>
-                <label for="icon_message">Message</label>
+                    <i class="material-icons prefix grey-text text-darken-2">create</i>
+                    <textarea id="icon_message" class="materialize-textarea" required="required" name="message"></textarea>
+                    <label for="icon_message">Message</label>
                 </div>
             </div>
             <div class="row" style="text-align: center">
-                <button class="close btn waves-effect waves-light valign-wrapper red">Close</button>
-                <button class="send btn waves-effect waves-light valign-wrapper" type="submit">Send<i class="material-icons right">send</i></button>
+                <button class="close btn waves-effect waves-light valign-wrapper red">
+                    Close
+                </button>
+                <button class="send btn waves-effect waves-light valign-wrapper" type="submit">
+                    Send<i class="material-icons right">send</i>
+                </button>
             </div>
         </form>
     </div>
